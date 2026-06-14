@@ -36,10 +36,14 @@ public class WithdrawCommand implements CommandExecutor {
             return true;
         }
 
-        Player player = (Player) sender;
-        int amountToWithdraw;
-        
-        Material currencyItem = getCurrencyMaterial();
+        Player player = (Player)sender;
+
+        if (!player.hasPermission("diamondeconomy.withdraw")) {
+          player.sendMessage("§cYou do not have permission to withdraw.");
+         return true;
+}
+
+Material currencyItem = getCurrencyMaterial();
         double currentBalance = economy.getBalance(player);
         
         if (args[0].equalsIgnoreCase("all")) {
