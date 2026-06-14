@@ -40,6 +40,9 @@ commands:
     class: com.mikey1201.commands.DiamondEconomyCommand
 
 permissions:
+  diamondeconomy.withdraw:
+    description: Allows withdrawing physical currency items.
+    default: true
   diamondeconomy.use:
     description: Allows use of basic economy commands.
     default: true
